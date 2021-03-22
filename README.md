@@ -1,4 +1,5 @@
 Тестовое задание. В проекте использовал React, Redux, Typescript, Bootstrap, Material-UI. На бэке PHP/Laravel, PGSQL.
+
 Скриншоты работы приложения:
 ![1](https://user-images.githubusercontent.com/56229228/112048768-92c64f00-8b70-11eb-80f0-ec2376c31679.png)
 Модальное окно для внесения измений:
