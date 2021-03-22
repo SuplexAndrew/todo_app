@@ -36,6 +36,7 @@ export const UserListReducer:Reducer<UserListState, UserListAction> =
         case UserListActionTypes.FETCH_USERLIST:
             return {loading: true, error: null, users: state.users}
         case UserListActionTypes.FETCH_USERLIST_SUCCESS:
+            console.log(action.payload)
             return {loading: false, error: null, users: action.payload}
         case UserListActionTypes.FETCH_USERLIST_ERROR:
             return {loading: false, error: action.payload, users: state.users}

@@ -15,6 +15,7 @@ export interface TasksState {
     items: Task[],
     loading: boolean;
     error: null | string;
+    needed: boolean
 }
 
 export enum TaskActionTypes {

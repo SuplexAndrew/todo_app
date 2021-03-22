@@ -29,7 +29,7 @@ interface LoginUserAction {
 
 interface LoginSuccessAction {
     type: UserActionTypes.LOGIN_SUCCESS;
-    payload: User
+    payload: any
 }
 
 interface LoginErrorAction {

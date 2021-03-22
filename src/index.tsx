@@ -1,10 +1,10 @@
 import './index.css';
 import ReactDOM from "react-dom";
 import React from "react";
-import ProviderComponent from "./ProviderComponent";
+import App from "./App";
 
 ReactDOM.render(
     <React.StrictMode>
-        <ProviderComponent/>
+        <App/>
     </React.StrictMode>,
     document.getElementById('root'))

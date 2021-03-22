@@ -1,8 +1,8 @@
 import {Reducer} from "react";
-import {UserAction, UserActionTypes, UserState} from "../../Models/User";
+import {User, UserAction, UserActionTypes, UserState} from "../../Models/User";
 
 const InitialState: UserState = {
-    user: undefined,
+    user:  null,
     loading: false,
     error: null,
 }
@@ -12,12 +12,20 @@ export const UserReducer:Reducer<UserState, UserAction> = (state = InitialState,
         case UserActionTypes.LOGIN_USER:
             return {loading: true, error: null, user: state.user}
         case UserActionTypes.LOGIN_ERROR:
+            alert(action.payload)
             return {loading: false, error: action.payload, user: null}
         case UserActionTypes.LOGIN_SUCCESS:
-            localStorage.setItem('user', action.payload.login )
-            return {loading: false, error: null, user: action.payload}
+            console.log(state.user)
+            if(action.payload.error){
+                console.log(action.payload)
+                alert(action.payload.error.message)
+                return {loading: false, error: null, user: null}
+            }
+            else {
+                return {loading: false, error: null, user: action.payload as User}
+            }
         case UserActionTypes.LOGOUT_USER:
-            return {loading: false, error: null, user: null, token: null}
+            return {loading: false, error: null, user: null}
         default:
             return state
     }

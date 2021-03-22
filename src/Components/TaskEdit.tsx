@@ -23,7 +23,7 @@ interface ITEProps {
     addNew: typeof addTask,
     editTask: typeof editTask,
     users: User[],
-    task: null | Task
+    task: null | Task,
 }
 
 export const TaskEdit: React.FC<ITEProps> = ({isOpen, onClose, addNew, editTask, users = [], task}) => {

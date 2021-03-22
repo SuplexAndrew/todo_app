@@ -1,21 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './App.css';
-import {Main} from "./Components/Main";
-import {Provider, useStore} from "react-redux";
-import {Header} from "./Components/Header";
-import {Login} from "./Components/Login";
-import {User} from "./Models/User";
+import {Provider} from "react-redux";
+import {store} from "./Redux";
+import RootComponent from "./Components/RootComponent";
 
 const App: React.FC = () => {
-    const store = useStore()
-    const [user, setUser] = useState<User | null>(null)
-    store.subscribe(() => setUser(store.getState().user))
     return (
-        <>
-            {user != null && <Header  user={user}/>}
-            {user == null && <Login/>}
-            {user != null && <Main/>}
-        </>
+        <Provider store={store}>
+            <RootComponent />
+        </Provider>
     )
 }
 
