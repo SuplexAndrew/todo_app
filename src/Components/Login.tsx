@@ -5,10 +5,12 @@ import {createStyles, makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(() => createStyles({
     root: {
-        alignItems: 'center',
         textAlign: 'center',
         border: '1px solid black',
-        display: 'block',
+        borderRadius: '10px',
+        width: '16%',
+        margin: '13% 42%',
+        padding: '8px 5px 18px 5px'
     },
     textInput: {
         padding: '10px'
